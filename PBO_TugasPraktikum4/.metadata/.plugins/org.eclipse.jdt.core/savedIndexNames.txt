@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+D:\RezkyAzhar\POLBAN\TUGAS\SEMESTER 3\PBO (P)\JAVA\PraktikumJava\PBO_TugasPraktikum4\.metadata\.plugins\org.eclipse.jdt.core
+3011209426.index
+1865797976.index
+2272795145.index
+421302186.index

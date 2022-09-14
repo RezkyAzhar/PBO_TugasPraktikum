@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class soal3_berhitung {
+
+	public static void main(String[] args) {
+		int number;
+        int numberNew;
+        int numOutput;
+        char operation;
+        
+        Scanner input = new Scanner(System.in);
+        number = input.nextInt();
+        numberNew = input.nextInt();
+        operation = input.next().charAt(0);
+        
+        if((number >= 1 && number <= 1000)&&(numberNew >= 1 && numberNew <= 1000)){
+        switch (operasi){
+            
+            case '+':
+            numOutput = number + numberNew;
+            System.out.println(numOutput);
+            break;
+
+            case '-':
+            numOutput = number - numberNew;
+            System.out.println(numOutput);
+            break;
+                        
+            case '*':
+            numOutput = number * numberNew;
+            System.out.println(numOutput);
+            break;
+                        
+            case '/':
+            numOutput = number / numberNew;
+            System.out.println(numOutput);
+            break;
+                        
+            case '%':
+            numOutput = number % numberNew;
+            System.out.println(numOutput);
+            break;
+            default:
+               System.out.println("Something wrong!");
+               break;
+        }
+            input.close();
+        }else System.out.println("Scale 1 - 1000"); 
+
+	}
+
+}
