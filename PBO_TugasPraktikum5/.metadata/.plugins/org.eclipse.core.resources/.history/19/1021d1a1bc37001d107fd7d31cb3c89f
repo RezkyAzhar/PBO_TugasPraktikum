@@ -1,0 +1,44 @@
+package restoran;
+
+public class Restaurant {
+	private Makanan[] foodList; 
+	private static byte id=0;
+
+	public Restaurant() {
+		foodList = new Makanan[10];
+	}
+	
+	public static byte getId() {
+		return id;
+	}
+
+	public static void setId(byte id) {
+		Restaurant.id = id;
+	}
+
+//	public Restaurant() {
+//		this.nama_makanan = new String[10];
+//		this.harga_makanan = new double[10];
+//		this.stok = new int[10];
+//	}
+	
+	public void tambahMenuMakanan(String nama, double harga, int stok) {
+		this.foodList[id] = new Makanan (nama, harga, stok);
+	}
+	
+	public void tampilMenuMakanan() {
+		for (int i = 0; i <= id; i++) {
+			if(!isOutOfStock(i)) {
+				this.foodList[i].tampilMakanan();			}
+		}
+	}
+	
+	public boolean isOutOfStock(int id) {
+		return foodList[id].getStok() == 0;
+	}
+	
+	public static void nextId() {
+		id++;
+	}
+
+}

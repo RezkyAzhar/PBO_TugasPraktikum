@@ -1,0 +1,102 @@
+package kasus2_warmindo;
+
+
+public class WarmindoJual {
+	private Warmindo[] menuList;
+	private static byte id=0;
+	
+	
+	public static byte getId() {
+		return id;
+	}
+
+	public static void setId(byte id) {
+		WarmindoJual.id = id;
+	}
+
+	public WarmindoJual() {
+		this.menuList = new Warmindo[20];
+	}
+	
+	public void tambahMenuMakanan(String nama, double harga, int qty) {
+		this.menuList[id] = new Warmindo();
+		this.menuList[id].setNama_produk(nama);
+		this.menuList[id].setHarga(harga);
+		this.menuList[id].setQty(qty);
+	}
+	
+	public void tampilMenuMakanan() {
+		System.out.println("--------------------MENU--------------------");
+		for(int i=0; i<=id; i++) {
+			int a = i;
+			if(!isOutOfStock(i)) {
+				a++;
+				System.out.println(a + ". " +
+						menuList[i].getNama_produk() + "[" + menuList[i].getQty() + "]" + "\tRp."
+						+ menuList[i].getHarga());
+			}else {
+				a++;
+				System.out.println(a + ". " +
+						menuList[i].getNama_produk() + "\t\t Stok Tidak Ada");
+			}
+		}
+	}
+	
+	public void beliMakanan(int inputan, int quantity) {
+		if(!isOutOfStock(inputan)) {
+			menuList[inputan].setQty(menuList[inputan].getQty() - quantity);
+			System.out.println(menuList[inputan].getNama_produk() +"\t" + quantity );
+			TotalHarga(inputan,quantity);
+		}
+	}
+	
+	public void TotalHarga(int id_harga, int jumlahbeli) {
+		double TotalBayar = menuList[id_harga].getHarga() * jumlahbeli;
+		System.out.println("Total Harga : " + TotalBayar);
+	}
+		
+	public boolean isOutOfStock(int id) {
+		if(this.menuList[id].getQty() == 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public static void nextId() {
+		id++;
+		setId(id);
+	}
+	public void PesanMakanan(String NamaMakanan, int Qty) {
+		for(int i=0; i<=id; i++) {
+			if(NamaMakanan.equals(menuList[i].getNama_produk())) {
+				if(menuList[i].getQty()>= Qty) {
+					System.out.println(Qty +" "+menuList[i].getNama_produk() +" "+ "Berhasil Dibeli");menuList[i].kurangiQty(Qty);
+				}else {
+			System.out.println("Stok" +menuList[i].getNama_produk()+ "habis");
+				}
+			}
+		}
+	}
+	public void tambahMakanan() {
+		this.tambahMenuMakanan("Bala-Bala\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Tempe \t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Cireng\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Pastel\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Lontong\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("karoket\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Risoles\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Gehu\t\t", 1_000, 20);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Tahu\t", 1_000, 0);
+		WarmindoJual.nextId();
+		this.tambahMenuMakanan("Molen\t", 1_000, 20);
+		}
+}

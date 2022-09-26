@@ -1,0 +1,32 @@
+package kasus2_warmindo;
+import java.util.Scanner;
+import java.io.*;
+
+public class WarmindoMain {
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner (System.in);
+		BufferedReader input2 = new BufferedReader (new InputStreamReader (System.in));
+		int i = 0;
+		int totalHarga = 0;
+		int	tampung = 0;
+		String menu[] = new String [100];
+		int harga[] = new int [100];
+		String pilih = "y";
+		
+		System.out.println("-----------------------------------");
+		System.out.println("     Daftar Menu Warmindo PKB	   ");
+		System.out.println("-----------------------------------");
+		System.out.println("1. Mie Goreng / Rebus	= Rp 7000  ");
+		System.out.println("2. Mie Double		= Rp 12000 ");
+		System.out.println("3. Mie+telor 			= Rp 10000 ");
+		System.out.println("4. Nasi+telor			= Rp 8000  ");
+		System.out.println("5. Nasi Goreng			= Rp 11000 ");
+		System.out.println("6. Kopi					= Rp 3000  ");
+		System.out.println("7. Teh manis			= Rp 2000  ");
+		System.out.println("8. Josu					= Rp 5000  ");
+		System.out.println("9. Susu 				= Rp 5000  ");
+		System.out.println("10. Air Mineral 		= Rp 3000  ");
+		System.out.println("-----------------------------------");
+	}
+}

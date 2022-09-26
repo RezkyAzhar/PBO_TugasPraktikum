@@ -1,0 +1,34 @@
+package kasus2_warmindo;
+
+public class Warmindo {
+	private String nama_produk;
+	private int harga;
+	private int qty;
+	
+	public Warmindo(String nama, int harga, int qty) {
+		this.nama_produk = nama;
+		this.harga = harga;
+		this.qty = qty;
+	}
+
+	public String getNama_produk() {
+		return nama_produk;
+	}
+
+	public int getHarga() {
+		return harga;
+	}
+
+	public int getQty() {
+		return qty;
+	}
+	
+	public void tampilMenu() {
+		System.out.println(nama_produk +"["+qty+"]"+"\tRp"+harga);
+	}
+	
+	public void kurangiQty(int minQty) {
+		qty -= minQty;
+	}
+	
+}

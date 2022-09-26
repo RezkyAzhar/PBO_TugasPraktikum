@@ -1,0 +1,14 @@
+package kasus2_warmindo;
+
+public class Warmindo {
+	private String nama_produk;
+	private int harga;
+	private int qty;
+	
+	public Warmindo(String nama, int harga, int qty) {
+		this.nama_produk = nama;
+		this.harga = harga;
+		this.qty = qty;
+	}
+	
+}

@@ -1,0 +1,10 @@
+package kasus2_warmindo;
+
+public class WarmindoMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
